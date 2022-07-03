@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp_10"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@color/white"
+    android:elevation="@dimen/_8sdp"
+    android:gravity="center_horizontal"
+    app:cardCornerRadius="5dp"
+    tools:targetApi="lollipop">
+
+    <LinearLayout
+        android:id="@+id/ll_parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/trending_image"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_margin="@dimen/_10sdp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/store_one" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Tufkote Flood Beam Auxiliary LED Lamp for Cars and Bikes (27W)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="SmallSp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_store_address"
+                android:layout_gravity="left"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_store_address">
+
+                <!-- <ImageView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:paddingRight="5dp"
+                     android:src="@drawable/stor_rat_star_fill"
+                     android:tint="@color/colorGrey" />-->
+
+                <RatingBar
+                    android:id="@+id/simpleRatingBar"
+                    style="@style/MyRatingBar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:numStars="5"
+                    android:rating="2" />
+
+                <TextView
+                    android:id="@+id/tv_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="4.6"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/_8sdp"
+                    app:layout_constraintStart_toEndOf="@+id/ll_rating" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp">
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/price"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_selling_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/price"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="7.7 AED"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_main_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toEndOf="@+id/tv_selling_price"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="7.7 AED"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/discount_color" />
+
+                <ImageView
+                    android:id="@+id/iv_heart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_heart_un_fill" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

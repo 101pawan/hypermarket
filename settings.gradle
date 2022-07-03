@@ -1,0 +1,4 @@
+include ':app'
+//include ':imagepicker'
+rootProject.name = "hyperMarket-android"
+include ':sdkdubai-release'

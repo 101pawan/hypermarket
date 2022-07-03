@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_80"
+                    android:background="@drawable/gradiant_back"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_edit_profile_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_17"
+                        android:layout_marginStart="@dimen/dp_16"
+                        android:src="@drawable/back_icon"
+                        android:tint="@color/black" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_12"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/edit_profile"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14" />
+
+                </LinearLayout>
+
+
+                <!--        <FrameLayout-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content">-->
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_profile_img"
+                    android:layout_width="@dimen/dp_115"
+                    android:layout_height="@dimen/dp_115"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:background="@drawable/pesnldtl_cameraicon"
+                    android:padding="@dimen/dp_5" />
+
+                <!--        </FrameLayout>-->
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_40"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/full_name"
+                    android:textColor="@color/edit_profile_light_color"
+                    android:textSize="@dimen/sp_14" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_profile_full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/full_name"
+                    android:textColor="@color/edit_profile_dark_color"
+                    android:textSize="@dimen/sp_17" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_22"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/profile_phone_no"
+                    android:textColor="@color/edit_profile_light_color"
+                    android:textSize="@dimen/sp_14" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_profile_mobile_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/mobile_number"
+                    android:textColor="@color/edit_profile_dark_color"
+                    android:textSize="@dimen/sp_17" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_22"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/email_address_edit_profile"
+                    android:textColor="@color/edit_profile_light_color"
+                    android:textSize="@dimen/sp_14" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_profile_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/email_address"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_17" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_22"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/country"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14" />
+
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_edit_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/my_cart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_17" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_submit"
+                    android:layout_width="@dimen/dp_230"
+                    android:layout_height="@dimen/dp_45"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_38"
+                    android:layout_marginRight="@dimen/dp_30"
+                    android:background="@drawable/round_corner_28_background"
+                    android:backgroundTint="@color/orange_btn"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center"
+                    android:text="@string/save_changes"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16" />
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+</RelativeLayout>

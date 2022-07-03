@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:elevation="@dimen/dp_8"
+    app:cardCornerRadius="@dimen/_10sdp"
+    tools:ignore="UnusedAttribute">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/deal_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_115sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/food"
+        app:riv_border_color="#00000000"
+        app:riv_border_width="0dip"
+        android:layout_margin="2dp"
+        app:riv_corner_radius="@dimen/_10sdp"
+        app:riv_mutate_background="true"
+        app:riv_oval="false" />
+
+
+</androidx.cardview.widget.CardView>

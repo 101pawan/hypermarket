@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradiant_back"
+                android:gravity="center"
+                android:paddingTop="@dimen/_16sdp"
+                android:paddingBottom="@dimen/_16sdp"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_settings_profile"
+                    android:layout_width="@dimen/dp_90"
+                    android:layout_height="@dimen/dp_90"
+                    android:layout_marginStart="@dimen/dp_12"
+                    android:background="@drawable/round_corner_28_border"
+                    android:padding="@dimen/dp_2"
+                    android:src="@drawable/profile_dummy_img" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_25"
+                    android:layout_marginEnd="12dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_settings_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".8"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/full_name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_20" />
+
+                        <ImageView
+                            android:id="@+id/profile_edit"
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/dp_20"
+                            android:layout_gravity="end"
+                            android:layout_weight=".2"
+                            android:tint="@color/black"
+                            android:src="@drawable/setting_edit" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_15"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_gravity="start"
+                            android:layout_weight=".1"
+                            android:tint="@color/black"
+                            android:src="@drawable/setting_phone" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_settings_mobile_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".9"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@string/mobile_number"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_12" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_15"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_gravity="start"
+                            android:layout_weight=".1"
+                            android:tint="@color/black"
+                            android:src="@drawable/setting_mail" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_settings_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".9"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@string/email"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_12" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_wallet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_32"
+                android:layout_marginRight="@dimen/dp_8"
+                android:gravity="center|left"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/wallet" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_wallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/my_wallet"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_32"
+                android:layout_marginRight="@dimen/dp_8"
+                android:gravity="center|left"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_mycart" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/my_cart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_my_orders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_8"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_myorders" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/my_orders"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_wish_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_5"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_wishlist" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/my_wishlist"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_coupons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_5"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_coupons" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/my_coupon"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_5"
+                android:gravity="center"
+                android:id="@+id/linearMyPoints"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_mypoints" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/my_points"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_5"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_support" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/my_support"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_change_language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_5"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_changelanguage" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/change_language"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"/>
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_manage_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_5"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_manageaddress" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/manage_address"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_dowloaded_invoice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_25"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_downloadinvoice" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/download_invoice"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_5"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_mysavedcards" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/my_saved_cart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_5"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="left"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_ereceipt" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/e_receipt"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_right_arrow" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_5"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".9"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/setting"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_20" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:tint="@color/black"
+                    android:src="@drawable/setting_green_arrow" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_log_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_81"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".9"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/log_out"
+                    android:textColor="@color/dark_red"
+                    android:textSize="@dimen/sp_20" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_28"
+                    android:layout_gravity="right"
+                    android:layout_weight=".1"
+                    android:src="@drawable/setting_logout" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

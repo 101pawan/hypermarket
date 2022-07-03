@@ -1,0 +1,14 @@
+<androidx.appcompat.widget.AppCompatTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_200"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/dp_16"
+    android:gravity="left"
+    android:fontFamily="@font/montserrat_regular"
+    android:textColor="@color/black"
+    android:textColorHint="@color/black"
+    android:hint="@string/select_country"
+    android:layout_marginLeft="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_10"
+    android:layout_marginTop="@dimen/dp_4"
+    android:padding="@dimen/dp_5"/>

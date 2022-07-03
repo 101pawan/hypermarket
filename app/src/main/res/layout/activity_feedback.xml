@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".ui.feedback.FeedbackActivity">
+
+    <RelativeLayout
+        android:id="@+id/ll_header1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_6"
+        android:background="@drawable/gradiant_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_web_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/iv_feedback_back"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:text="@string/feedback_to_company"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_17" />
+
+        <ImageView
+            android:id="@+id/iv_feedback_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:tint="@color/black"
+            app:srcCompat="@drawable/back_icon" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_40"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/lorem_ipsum"
+        android:textColor="@color/color_A5A5A5"
+        android:textSize="@dimen/sp_14" />
+
+    <EditText
+        android:id="@+id/edt_feedback_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_150"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/otp_background"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="top|start"
+        android:padding="@dimen/dp_8"
+        android:hint="@string/write_your_comment_here"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/black"
+        android:textSize="@dimen/sp_14" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btn_feedback_submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_47"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:text="@string/submit"
+        android:fontFamily="@font/montserrat_bold"
+        android:backgroundTint="@color/orange_btn"
+        android:background="@drawable/round_corner_28_background"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16" />
+
+</LinearLayout>

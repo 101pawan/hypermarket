@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_30"
+        android:text="@string/please_enter_emailid"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/et_email_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_30"
+
+        android:background="@drawable/border_rectangle_green"
+        android:hint="@string/email_id"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_13"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_13"
+        android:textColor="@color/black"
+        android:textColorHint="@color/colorGrey"
+        android:textSize="@dimen/sp_14" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btn_email_submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:background="@drawable/round_corner_28_background"
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_10"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16" />
+
+
+</LinearLayout>

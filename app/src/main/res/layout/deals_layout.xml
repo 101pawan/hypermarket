@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.makeramen.roundedimageview.RoundedImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/deals_image"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_115sdp"
+    android:layout_marginStart="@dimen/dp_10"
+    android:scaleType="fitXY"
+    android:src="@drawable/food"
+    app:riv_border_color="#00000000"
+    app:riv_border_width="0dip"
+    app:riv_corner_radius="@dimen/_10sdp"
+    app:riv_mutate_background="true"
+    app:riv_oval="false"
+    android:layout_marginEnd="@dimen/_10sdp" />
+<!--<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dp_165"
+    android:layout_height="@dimen/dp_155"
+    android:layout_marginLeft="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_10"
+    android:background="@color/white"
+    android:elevation="@dimen/dp_8"
+    android:gravity="center_horizontal"
+    app:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:id="@+id/ln_deals"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_125">
+
+      &lt;!&ndash;      <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/deals_image"
+                android:layout_width="@dimen/dp_158"
+                android:layout_height="@dimen/dp_125"
+                android:layout_gravity="center"
+                android:src="@drawable/camera" />&ndash;&gt;
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/deals_image"
+                android:layout_width="@dimen/_148sdp"
+                android:layout_height="@dimen/dp_125"
+                android:scaleType="fitXY"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:src="@drawable/store_one"
+                app:riv_border_color="#00000000"
+                app:riv_border_width="0dip"
+                app:riv_corner_radius="@dimen/_5sdp"
+                app:riv_mutate_background="true"
+                app:riv_oval="false" />
+
+            <FrameLayout
+                android:layout_width="@dimen/dp_65"
+                android:layout_height="@dimen/dp_65">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/strips_image"
+                    android:layout_width="@dimen/dp_65"
+                    android:layout_height="@dimen/dp_65"
+                    android:src="@drawable/offer_strip" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_discounts"
+                    android:layout_width="@dimen/dp_48"
+                    android:layout_height="@dimen/dp_15"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:rotation="-45"
+                    android:text="@string/offer"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12" />
+
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:orientation="horizontal">
+
+            &lt;!&ndash;       <FrameLayout
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_marginRight="@dimen/dp_26"
+                       android:layout_weight=".5">
+
+                       <androidx.appcompat.widget.AppCompatTextView
+                           android:layout_width="match_parent"
+                           android:layout_height="@dimen/dp_12"
+                           android:layout_gravity="top"
+                           android:textColor="@color/dark_red"
+                           android:textSize="@dimen/sp_14"
+                           android:background="@drawable/under_line_text"
+                           android:gravity="top"
+                           />
+
+
+
+                   </FrameLayout>&ndash;&gt;
+
+            <TextView
+                android:id="@+id/tv_prev_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="200 AED"
+                android:textColor="@color/dark_red"
+                android:textSize="@dimen/sp_13" />
+
+            <TextView
+                android:id="@+id/tv_next_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:text="200 AED"
+                android:textColor="@color/text_green"
+                android:textSize="@dimen/sp_13" />
+
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>-->
+<!--
+    <?xml version="1.0" encoding="utf-8"?>
+<com.makeramen.roundedimageview.RoundedImageView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/deals_image"
+android:layout_width="match_parent"
+android:layout_height="@dimen/_115sdp"
+android:scaleType="fitXY"
+android:src="@drawable/food"
+app:riv_border_color="#00000000"
+app:riv_border_width="0dip"
+app:riv_corner_radius="@dimen/_10sdp"
+app:riv_mutate_background="true"
+app:riv_oval="false" />-->

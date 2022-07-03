@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../Library/Android/sdk/platforms/android-30/data/res/layout/simple_list_item_checked.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/activity_add_card.xml" value="0.13385416666666666" />
+        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.18795289855072464" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_home_delevery.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/activity_my_order.xml" value="0.10677083333333333" />
+        <entry key="app/src/main/res/layout/activity_order_cancelled.xml" value="0.18795289855072464" />
+        <entry key="app/src/main/res/layout/activity_order_summary.xml" value="0.2847991943359375" />
+        <entry key="app/src/main/res/layout/activity_order_track.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_payment_summary.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_personal_detail.xml" value="0.18795289855072464" />
+        <entry key="app/src/main/res/layout/activity_product_detail.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_product_list.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/activity_select_payment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_update_order_status.xml" value="0.1078125" />
+        <entry key="app/src/main/res/layout/activity_wallet.xml" value="0.26034393310546877" />
+        <entry key="app/src/main/res/layout/cancellation_list_dialog.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/categories_layout.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/child_item.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/coupon_item.xml" value="0.15572916666666667" />
+        <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.17527173913043478" />
+        <entry key="app/src/main/res/layout/fragment_categeory_list.xml" value="0.18854166666666666" />
+        <entry key="app/src/main/res/layout/fragment_delevery_cancel.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_delevery_ongoing.xml" value="0.18795289855072464" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_ongoing_orders.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_past_orders.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/layout/fragment_product_details.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_product_list.xml" value="0.2259963768115942" />
+        <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_cancelled_order_list.xml" value="0.1793478260869565" />
+        <entry key="app/src/main/res/layout/item_category_layout.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/item_child.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/item_deals_detail_list_layout.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/item_dialog_select_country.xml" value="0.20677083333333332" />
+        <entry key="app/src/main/res/layout/item_footer.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/item_ongoing_delivery_list_item.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_ongoing_order_list.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/item_parent.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/item_past_order_list.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/item_product_color_list.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/item_product_detail_pager_layout.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/item_product_list_layout.xml" value="0.24075408935546877" />
+        <entry key="app/src/main/res/layout/item_product_list_vertical_layout.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/item_product_size_list.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/item_related_product.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/item_save_for_later_list.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/item_store_layout.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/item_wish_list_layout.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/new_products_order_item_view.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/newpastorderadapterlayout.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/notification_badge.xml" value="0.1598731884057971" />
+        <entry key="app/src/main/res/layout/ongoing_order_lst_fragment.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/order_items_fragment.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/order_product_item.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/orderlistlayout.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/parent_item.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/payment_layout.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/products_order_item_view.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/return_order_fragment.xml" value="0.182518115942029" />
+        <entry key="app/src/main/res/layout/trending_view_all_layout.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/menu/home_page.xml" value="0.24270833333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="12dp"
+        android:paddingTop="12dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="12dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_radio_btn"
+
+            android:layout_width="25dp"
+            android:layout_height="0dp"
+            android:padding="5dp"
+            app:layout_constraintDimensionRatio="h,1:1"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/gray_radio_active" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Rahul Sharma"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_radio_btn"
+            app:layout_constraintLeft_toRightOf="@id/iv_radio_btn"
+            app:layout_constraintTop_toTopOf="@id/iv_radio_btn"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_home_office_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center_vertical"
+            android:text="Home"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_name_value"
+            app:layout_constraintLeft_toRightOf="@id/tv_name_value"
+            app:layout_constraintTop_toTopOf="@id/tv_name_value"
+
+            />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_address_edit"
+            android:layout_width="25dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_home_office_other"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintRight_toLeftOf="@id/iv_address_delete"
+            app:layout_constraintTop_toTopOf="@id/tv_home_office_other"
+            app:srcCompat="@drawable/address_edit" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_address_delete"
+            android:layout_width="25dp"
+            android:layout_height="0dp"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_address_edit"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_address_edit"
+            app:srcCompat="@drawable/address_delete" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_company_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:visibility="gone"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:text="Fluper - Mobile App Company"
+            android:textColor="@color/color_text_3A3A3A"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_name_value"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_value"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_phone_no_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:text="+1 646-889-2430"
+            android:textColor="@color/color_text_3A3A3A"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_company_value"
+            app:layout_constraintTop_toBottomOf="@id/tv_company_value"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_address"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text=""
+            android:textColor="@color/color_text_9F9F9F"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_phone_no_value"
+            app:layout_constraintTop_toBottomOf="@id/tv_phone_no_value"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

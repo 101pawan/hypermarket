@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clipToPadding="false"
+    tools:context=".activity.SelectAddressActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:orientation="horizontal"
+            android:theme="@style/ToolbarStyle"
+            android:background="@drawable/gradiant_back"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <ImageView
+                android:id="@+id/iv_actionbar_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:paddingEnd="@dimen/dimen_16dp"
+                app:srcCompat="@drawable/back_icon"
+                android:tint="@color/black"
+                tools:ignore="ContentDescription,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tv_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/montserrat_regular"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/select_address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_18sp"
+                tools:ignore="HardcodedText" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_10sdp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <TextView
+            android:id="@+id/tv_billing_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/select_billing_address"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+
+            android:id="@+id/btn_add_new_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_billing_address"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/custom_btn_white"
+            android:drawableStart="@drawable/ic_plus"
+            android:drawablePadding="@dimen/_10sdp"
+            android:drawableTint="@color/text_green"
+            android:fontFamily="@font/montserrat_regular"
+            android:includeFontPadding="true"
+            android:paddingStart="@dimen/_30sdp"
+            android:paddingLeft="@dimen/_30sdp"
+            android:paddingEnd="@dimen/_30sdp"
+            android:paddingRight="@dimen/_30sdp"
+            android:text="@string/add_new__address"
+            android:textColor="@color/text_green"
+            tools:ignore="HardcodedText"
+            tools:targetApi="m" />
+        <!--
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_billing_address"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:elevation="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/dp_180"
+                    app:cardElevation="@dimen/_10sdp"
+                    tools:targetApi="lollipop">
+
+                    &lt;!&ndash; your layout stuff here &ndash;&gt;
+
+                    <Button
+                        android:id="@+id/btn_add_new_address"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_btn_white"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:drawableStart="@drawable/ic_plus"
+                        android:drawableLeft="@drawable/ic_plus"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:drawableTint="@color/text_green"
+                        android:includeFontPadding="true"
+                        android:paddingStart="@dimen/_30sdp"
+                        android:paddingLeft="@dimen/_30sdp"
+                        android:paddingEnd="@dimen/_30sdp"
+                        android:paddingRight="@dimen/_30sdp"
+                        android:text="Add New Address"
+                        android:textColor="@color/text_green"
+                        tools:ignore="HardcodedText"
+                        tools:targetApi="m" />
+                </androidx.cardview.widget.CardView>
+        -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_continue"
+            android:layout_below="@+id/btn_add_new_address"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_address" />
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:layout_marginRight="@dimen/_50sdp"
+            android:background="@drawable/round_corner_28_background"
+            android:elevation="@dimen/_8sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/continue_btn"
+            android:textColor="@color/white"
+            tools:ignore="HardcodedText"
+            tools:targetApi="m" />
+
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

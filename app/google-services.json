@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "652116274511",
+    "project_id": "yasmart-564fe",
+    "storage_bucket": "yasmart-564fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652116274511:android:908010284b729d2b60293a",
+        "android_client_info": {
+          "package_name": "com.hypermarket_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652116274511-vt13dbq7sqj6svea6vlbnucssioh7m2t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hypermarket_android",
+            "certificate_hash": "f8f189d3f37995b7403464e6921eac0d85d77c6e"
+          }
+        },
+        {
+          "client_id": "652116274511-gp64d0pcqldc68mr5pmc42ceiba1373q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8yCFXWjcpdqK_YNPLBo5ktgCxcEAVxCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "652116274511-gp64d0pcqldc68mr5pmc42ceiba1373q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "652116274511-l52tdot0uvg5j50phmomtgfg7fuoqrat.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.YasMartapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

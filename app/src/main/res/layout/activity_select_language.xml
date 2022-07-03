@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.selectCountry.SelectCountryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@drawable/gradiant_back">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/login_logo" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_56"
+            android:layout_marginRight="@dimen/dp_30"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/Preferred_country"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_28" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_38"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/select_country_you_want_to_proceed"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16" />
+
+
+        <LinearLayout
+            android:id="@+id/ln_spinner_selct_language"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_38"
+            android:background="@drawable/round_corner_8_border"
+            android:layout_marginTop="@dimen/dp_22"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_30"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_country"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_34"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingStart="@dimen/dp_15"
+                android:paddingEnd="@dimen/dp_10"
+                android:textColorHint="@color/black"
+                android:drawableEnd="@drawable/dropdown_arrow"
+                android:textColor="@color/black"
+                android:popupBackground="@color/white"
+                android:backgroundTint="@color/white"
+                android:hint="@string/select_country"
+                android:textSize="@dimen/sp_16"/>
+            <!--<androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_weight=".1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/droparrow_icon" />-->
+
+        </LinearLayout>
+
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_proceed"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_30"
+            android:background="@drawable/round_corner_28_background"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:text="@string/proceed"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16" />
+    </LinearLayout>
+
+
+</RelativeLayout>

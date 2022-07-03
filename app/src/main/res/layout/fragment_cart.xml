@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/enableScreen">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:orientation="horizontal"
+            android:theme="@style/ToolbarStyle"
+            android:background="@drawable/gradiant_back"
+
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+            <TextView
+                android:id="@+id/tv_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/montserrat_regular"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/title_cart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_18sp" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <TextView
+        android:id="@+id/tv_reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/message_reload"
+        android:textAlignment="center"
+        android:textColor="@color/green_text"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_empty_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"
+        android:textColor="@color/colorGrey"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_bar"
+        android:paddingBottom="?android:attr/actionBarSize"
+        android:fillViewport="true"
+        android:scrollbars="none">
+        <LinearLayout
+            android:id="@+id/ll_parent_layout"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:id="@+id/rv_cart"/>
+            <TextView
+                android:id="@+id/tv_save_for_later"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="Redeem Points"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                tools:ignore="HardcodedText" />
+
+
+
+
+            <CheckBox
+                android:visibility="gone"
+                android:id="@+id/cb_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:checked="true"
+                android:padding="@dimen/_10sdp"
+                android:text="25 Points"
+                android:textColor="@color/green_text"
+                android:textSize="@dimen/_10sdp"
+                tools:targetApi="m" />
+
+
+            <View
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/color_divider_line" />
+
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_apply_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="Apply Coupon Code"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                tools:ignore="HardcodedText" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp">
+
+
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Coupon Code"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_30sdp"
+                    android:paddingRight="@dimen/_30sdp"
+                    android:background="@drawable/dotted"
+                    android:maxLength="13"
+                    android:singleLine="true"
+                    android:layout_marginTop="10sp"
+                    android:textColor="@color/black"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_12sdp"/>
+
+                <Button
+                    android:id="@+id/btn_apply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/custom_btn_drawable"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/_30sdp"
+                    android:paddingRight="@dimen/_30sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/color_divider_line" />
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Total"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="HardcodedText" />
+
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="0.0 AED"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="HardcodedText" />
+            </RelativeLayout>
+
+            <View
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/color_divider_line" />
+
+
+
+            <Button
+                android:id="@+id/btn_proceed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/round_corner_28_background"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingLeft="@dimen/_25sdp"
+                android:paddingRight="@dimen/_25sdp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/proceed_checkout"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp" />
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:targetApi="lollipop" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
+    <!--
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="?android:attr/actionBarSize"
+    android:background="@color/white"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+
+    tools:context=".Fragment.CategoryFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:orientation="horizontal"
+            android:theme="@style/ToolbarStyle"
+
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+            <TextView
+                android:id="@+id/tv_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/montserrat_regular"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/title_cart"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_18sp" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    &lt;!&ndash;        <GridView&ndash;&gt;
+    &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;
+    &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;
+    &lt;!&ndash;            tools:listitem="@layout/item_category"&ndash;&gt;
+    &lt;!&ndash;          />&ndash;&gt;
+
+&lt;!&ndash;    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@+id/app_bar"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ll_parent_layout"
+            android:layout_marginBottom="?android:attr/actionBarSize"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fastScrollEnabled="true"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:splitMotionEvents="false"
+            android:verticalScrollbarPosition="right"
+            android:layout_marginTop="@dimen/_10sdp"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_cart_list" />
+
+            <TextView
+                android:id="@+id/tv_save_for_later"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="@dimen/_10sdp"
+                android:text="Redeem Points"
+
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                tools:ignore="HardcodedText" />
+
+
+
+
+            <CheckBox
+                android:id="@+id/cb_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:checked="true"
+                android:padding="@dimen/_10sdp"
+                android:text="25 Points"
+                android:textColor="@color/green_text"
+                android:textSize="@dimen/_10sdp"
+                tools:targetApi="m" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/color_divider_line" />
+
+
+            <TextView
+                android:id="@+id/tv_apply_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="@dimen/_10sdp"
+                android:text="Apply Coupon Code"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                tools:ignore="HardcodedText" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp">
+
+
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Coupon Code"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_30sdp"
+                    android:paddingRight="@dimen/_30sdp"
+                    android:background="@drawable/dotted"
+                    android:maxLength="10"
+                    android:singleLine="true"
+                    android:layout_marginTop="10sp"
+                    android:textColor="@color/black"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_12sdp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/custom_btn_drawable"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/_30sdp"
+                    android:paddingRight="@dimen/_30sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/color_divider_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Total"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="HardcodedText" />
+
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="0.0 AED"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="HardcodedText" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/color_divider_line" />
+
+
+            <Button
+                android:id="@+id/btn_proceed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_btn_drawable"
+                android:text="Proceed to Checkout"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="HardcodedText"
+                android:layout_gravity="center"
+
+                />
+
+    &lt;!&ndash;        <Button
+                android:id="@+id/btn_proceed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/custom_btn_drawable"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingLeft="@dimen/_25sdp"
+                android:paddingRight="@dimen/_25sdp"
+                android:text="Proceed to Checkout"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="HardcodedText" />&ndash;&gt;
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>&ndash;&gt;
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar"
+        android:fillViewport="true"
+        android:layout_marginBottom="?android:attr/actionBarSize"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ll_parent_layout"
+            android:layout_marginBottom="?android:attr/actionBarSize"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_cart_list" />
+
+
+            <TextView
+                android:id="@+id/tv_save_for_later"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="@dimen/_10sdp"
+                android:text="Redeem Points"
+
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                tools:ignore="HardcodedText" />
+
+
+
+
+            <CheckBox
+                android:id="@+id/cb_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:checked="true"
+                android:padding="@dimen/_10sdp"
+                android:text="25 Points"
+                android:textColor="@color/green_text"
+                android:textSize="@dimen/_10sdp"
+                tools:targetApi="m" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/color_divider_line" />
+
+
+            <TextView
+                android:id="@+id/tv_apply_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="@dimen/_10sdp"
+                android:text="Apply Coupon Code"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                tools:ignore="HardcodedText" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp">
+
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter Coupon Code"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:paddingLeft="@dimen/_30sdp"
+                android:paddingRight="@dimen/_30sdp"
+                android:background="@drawable/dotted"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:layout_marginTop="10sp"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/_12sdp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/custom_btn_drawable"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/_30sdp"
+                    android:paddingRight="@dimen/_30sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/color_divider_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Total"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                tools:ignore="HardcodedText" />
+
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="0.0 AED"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="HardcodedText" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/color_divider_line" />
+
+
+
+
+            <Button
+                android:id="@+id/btn_proceed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/custom_btn_drawable"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingLeft="@dimen/_25sdp"
+                android:paddingRight="@dimen/_25sdp"
+                android:text="Proceed to Checkout"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="HardcodedText" />
+
+
+            &lt;!&ndash;        <androidx.recyclerview.widget.RecyclerView&ndash;&gt;
+            &lt;!&ndash;            android:id="@+id/rv_save_for_later"&ndash;&gt;
+            &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"&ndash;&gt;
+            &lt;!&ndash;            tools:listitem="@layout/item_cart_list" />&ndash;&gt;
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tv_reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/message_reload"
+        android:textAlignment="center"
+        android:textColor="@color/green_text"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_empty_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"
+        android:textColor="@color/colorGrey"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/colorAccent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:targetApi="lollipop" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>-->

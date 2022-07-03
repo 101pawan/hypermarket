@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AddCardActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/appbar_select_payment_mode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@drawable/gradiant_back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back_icon"
+            android:tint="@color/black">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/add_card"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btn_back"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_30sdp"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:src="@drawable/addcard_img"
+            android:visibility="gone" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/your_card_number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <com.hypermarket_android.util.FormattedNumberEditText
+                    android:id="@+id/cardno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="start"
+                    android:hint="XXXX XXXX XXXX XXXX"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingTop="@dimen/_16sdp"
+                    android:paddingBottom="@dimen/_16sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/color_text_B2B2B2"
+                    android:textSize="@dimen/_11sdp" />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/cardno"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@color/color_text_B2B2B2" />
+            </RelativeLayout>
+            <!--
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/et_Card_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:gravity="center"
+                                android:hint="XXXX"
+                                android:maxLines="4"
+                                android:paddingTop="@dimen/_16sdp"
+                                android:paddingBottom="@dimen/_16sdp"
+                                android:textColor="@color/color_text_B2B2B2"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/et_Card_2"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:background="@color/color_text_B2B2B2" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/et_Card_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:gravity="center"
+                                android:hint="XXXX"
+                                android:maxLines="4"
+                                android:paddingTop="@dimen/_16sdp"
+                                android:paddingBottom="@dimen/_16sdp"
+                                android:textColor="@color/color_text_B2B2B2"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/et_Card_3"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:background="@color/color_text_B2B2B2" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/et_Card_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:gravity="center"
+                                android:hint="XXXX"
+                                android:maxLines="4"
+                                android:paddingTop="@dimen/_16sdp"
+                                android:paddingBottom="@dimen/_16sdp"
+                                android:textColor="@color/color_text_B2B2B2"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/et_Card_4"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:background="@color/color_text_B2B2B2" />
+
+                        </RelativeLayout>
+            -->
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/name_on_card"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15" />
+        <EditText
+            android:id="@+id/cardholdername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="@string/enter_name"
+            android:maxLines="1"
+            android:paddingTop="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_16sdp"
+            android:singleLine="true"
+            android:textColor="@color/color_text_B2B2B2"
+            android:textSize="@dimen/_11sdp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_text_B2B2B2" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="CVV"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15" />
+        <EditText
+            android:id="@+id/cvv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="@string/enter_cvv"
+            android:inputType="textPassword"
+            android:maxLength="3"
+            android:maxLines="1"
+            android:paddingTop="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_16sdp"
+            android:singleLine="true"
+            android:textColor="@color/color_text_B2B2B2"
+            android:textSize="@dimen/_11sdp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_text_B2B2B2" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/expiry_date"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_15sdp">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/months"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="start"
+                    android:hint="MM"
+                    android:imeOptions="actionDone"
+                    android:inputType="date"
+                    android:maxLength="2"
+                    android:paddingTop="@dimen/_16sdp"
+                    android:paddingBottom="@dimen/_16sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/color_text_B2B2B2"
+                    android:textSize="@dimen/_11sdp" />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/months"
+                    android:visibility="gone"
+                    android:background="@color/color_text_B2B2B2" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:background="@null"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="start"
+                    android:hint="YYYY"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:paddingTop="@dimen/_16sdp"
+                    android:paddingBottom="@dimen/_16sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/color_text_B2B2B2"
+                    android:textSize="@dimen/_11sdp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/year"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/color_text_B2B2B2" />
+            </RelativeLayout>
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/add_Card"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:background="@drawable/round_corner_28_background"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:text="@string/add_card"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="price">السعر</string>
+    <string name="or_join_with">أو سجل بواسطة </string>
+    <string name="size">المقاس</string>
+    <string name="color">اللون</string>
+    <string name="select_size_to_see_price">يرجى اختيار المقاس لمعرفة السعر</string>
+    <string name="no_coupons_found">لا توجد كوبونات</string>
+    <string name="current_password">كلمة المرور الحالية</string>
+    <string name="write_your_comment_here"> أكتب تعليقك هنا</string>
+</resources>
