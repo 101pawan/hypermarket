@@ -66,9 +66,9 @@ class NewPastOrderFragment : BaseFragment() {
                     orderData: OrderListResponse.OrderData,
                     position: Int
                 ) {
-                    Singleton.orderData = orderData
+//                    Singleton.orderData = orderData
                     val intent = Intent(activity, OrderItemsActivity::class.java)
-                    intent.putExtra("order_position",position.toString())
+                    intent.putExtra("order_id",orderData.order_id)
                     intent.putExtra("fragment_position","4")
                     activity!!.startActivity(intent)
                 }

@@ -1,13 +1,12 @@
 package com.hypermarket_android.dataModel
-//userpassword
-//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
+
 data class OrderListResponse(
     val data: ArrayList<OrderData>,
     val total_records: Int? = null,
     val current_page: Int? = null,
     val total_pages: Int? = null,
 
-) {
+    ) {
     data class OrderData(
         val id: String,
         val order_id: String,
@@ -176,8 +175,21 @@ data class OrderListResponse(
         val address_type: String?,
         val created_at: String?,
         val updated_at: String?
-
-
     )
+}
 
+data class GetOrdersList(
+    val data: ArrayList<OrderData>,
+    val total_records: Int? = null,
+    val current_page: Int? = null,
+    val total_pages: Int? = null,
+
+    ) {
+    data class OrderData(
+        val order_id: String,
+        val order_status: String,
+        val total_payable_amount: String,
+        val order_date: String?,
+        var product_image: String?
+    )
 }

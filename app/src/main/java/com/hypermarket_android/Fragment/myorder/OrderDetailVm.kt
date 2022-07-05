@@ -9,11 +9,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class OrderListViewModel : BaseViewModel() {
+class OrderDetailVm : BaseViewModel() {
 
     private lateinit var mDisposable: Disposable
-//    var orderListResponse = MutableLiveData<OrderListResponse>()
-    var orderListResponse = MutableLiveData<GetOrdersList>()
+    //    var orderListResponse = MutableLiveData<OrderListResponse>()
+    var orderListResponse = MutableLiveData<OrderListResponse>()
     var pastorderListResponse = MutableLiveData<OrderListResponse>()
     var cancelledorderListResponse = MutableLiveData<OrderListResponse>()
     var cancelListResponse = MutableLiveData<CancelListResponse>()
@@ -40,21 +40,19 @@ class OrderListViewModel : BaseViewModel() {
 //                })
     }
 
-    fun getNewOrdersList(accessToken: String, type: String, user_id: String, page_no: String) {
-            apiInterface.getCompleteOrdersList(
-                accessToken = accessToken,
-                orderType = type,
-                userId = user_id,
-                pageNumber = page_no
-
-            ).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    onSuccessOrderList(it)
-                },
-                    {
-                        onErrorOrderList(it)
-                    })
+    fun getCompleteOrdersDetails(accessToken: String, order_number: String, user_id: String) {
+        apiInterface.getCompleteOrdersDetails(
+            accessToken = accessToken,
+            order_number = order_number,
+            user_id = user_id
+        ).subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                onSuccessOrderList(it)
+            },
+                {
+                    onErrorOrderList(it)
+                })
 
     }
 
@@ -126,7 +124,7 @@ class OrderListViewModel : BaseViewModel() {
                 })
     }
 
-    private fun onSuccessOrderList(it: GetOrdersList) {
+    private fun onSuccessOrderList(it: OrderListResponse) {
         orderListResponse.value = it
     }
 

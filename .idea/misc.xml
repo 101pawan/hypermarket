@@ -56,6 +56,7 @@
         <entry key="app/src/main/res/layout/newpastorderadapterlayout.xml" value="0.375" />
         <entry key="app/src/main/res/layout/notification_badge.xml" value="0.1598731884057971" />
         <entry key="app/src/main/res/layout/ongoing_order_lst_fragment.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/order_detail_fragment.xml" value="0.24270833333333333" />
         <entry key="app/src/main/res/layout/order_items_fragment.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/order_product_item.xml" value="0.375" />
         <entry key="app/src/main/res/layout/orderlistlayout.xml" value="0.19610507246376813" />

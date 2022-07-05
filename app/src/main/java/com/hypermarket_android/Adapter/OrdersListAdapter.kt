@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.pharmadawa.ui.notification.OngoingOrderAdapter
 import com.hypermarket_android.R
 import com.hypermarket_android.activity.OrderTrackActivity
+import com.hypermarket_android.dataModel.GetOrdersList
 import com.hypermarket_android.dataModel.OrderListResponse
 import com.hypermarket_android.listener.OnBottomReachedListener
 import com.hypermarket_android.listener.RecyclerViewClickListener
@@ -20,7 +21,7 @@ import java.lang.Exception
 
 class OrdersListAdapter(
     private val context: FragmentActivity?,
-    private val listOfOrder: ArrayList<OrderListResponse.OrderData>,
+    private val listOfOrder: ArrayList<GetOrdersList.OrderData>,
     private val listener: OnclickListener
 ) :
 RecyclerView.Adapter<OrdersListAdapter.MyViewHolder>() {
@@ -31,7 +32,7 @@ RecyclerView.Adapter<OrdersListAdapter.MyViewHolder>() {
     private var isBottomLoading: Boolean = false
 
     interface OnclickListener {
-        fun onClick(orderData: OrderListResponse.OrderData,position: Int)
+        fun onClick(orderData: GetOrdersList.OrderData,position: Int)
     }
 
 
@@ -70,9 +71,9 @@ RecyclerView.Adapter<OrdersListAdapter.MyViewHolder>() {
 //            convertDate(listOfOrder[position].created_at!!.split(".")[0]!!)
         val order = listOfOrder[position]
         holder.itemView.order_id.text = "#" + listOfOrder[position].order_id
-        holder.itemView.price.text = "#" + listOfOrder[position].product_price +" "+context?.getString(R.string.aed)
+        holder.itemView.price.text = "#" + listOfOrder[position].total_payable_amount +" "+context?.getString(R.string.aed)
 //        holder.itemView.tv_user_name.text = listOfOrder[position].shipping_detail!!.name
-        holder.itemView.phone.text = listOfOrder[position].alt_mobile_number
+//        holder.itemView.phone.text = listOfOrder[position].alt_mobile_number
 //        holder.itemView.tv_address_detail.text =
 //            " ${listOfOrder[position].shipping_detail!!.house_number ?: ""}, ${listOfOrder[position].shipping_detail!!.building_name ?: ""}, ${listOfOrder[position].shipping_detail!!.street ?: ""} "
 
@@ -101,7 +102,7 @@ RecyclerView.Adapter<OrdersListAdapter.MyViewHolder>() {
     }
 
 
-    fun getItem(position: Int): OrderListResponse.OrderData {
+    fun getItem(position: Int): GetOrdersList.OrderData {
         return listOfOrder[position]
     }
 
