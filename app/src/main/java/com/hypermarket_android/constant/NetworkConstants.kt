@@ -96,6 +96,7 @@ interface NetworkConstants {
         const val order_status = "order_status"
         const val status_reason = "order_status_reason"
         const val update_order = "add_order_status"
+        const val update_refund_replacement_order = "update_refund_replace_order_status"
         const val order_return = "order_return"
         const val my_wallet = "my-wallet"
     }

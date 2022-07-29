@@ -180,6 +180,21 @@ class DeliveryOrderListViewModel : BaseViewModel() {
                 })
     }
 
+    fun updateRefundReplaceOrder(accessToken: String, orderId: String, statusId: String) {
+        apiInterface.updateRefundReplaceOrderStatus(
+            accessToken = accessToken,
+            orderId = orderId,
+            statusId = statusId
+        ).subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                onSuccessUpdateOrderResponse(it)
+            },
+                {
+                    onErrorOrderList(it)
+                })
+    }
+
     private fun onSuccessUpdateOrderResponse(it: DeliveryOrderStatusUpdateData) {
         orderUpdateResponse.value = it
     }

@@ -75,10 +75,11 @@ class DeleveryOngoingFragment(private val statusId:Int) : BaseFragment() {
                     object : OngoingDeliveryOrderAdapter.OnclickListener {
                         override fun onClick(orderData: DeliveryOrderListResponse.DeliveryOrderData) {
                             //dialogConfirm(orderData.order_id)
+                            updateDeliveryStatus(orderData.id.orEmpty(),"Refund")
                         }
 
                         override fun onClick(position: Int,orderId: String?) {
-                            orderId?.let { orderId -> updateDeliveryStatus(orderId) }
+                            orderId?.let { orderId -> updateDeliveryStatus(orderId,"") }
                         }
                     })
             })
@@ -91,7 +92,7 @@ class DeleveryOngoingFragment(private val statusId:Int) : BaseFragment() {
         }
     }
 
-    fun updateDeliveryStatus(orderId: String){
+    fun updateDeliveryStatus(orderId: String,type: String){
         val builder = AlertDialog.Builder(context)
         builder.setTitle("Alert")
         builder.setMessage("Would you like to accept the order?")
@@ -100,12 +101,20 @@ class DeleveryOngoingFragment(private val statusId:Int) : BaseFragment() {
 
         // add the buttons
         builder.setPositiveButton("Accept", DialogInterface.OnClickListener { dialog, which ->
-                deliveryOrderViewModel.updateOrder(
-                    accessToken = prefs.accessToken,
-                    orderId = orderId,
-                    statusId = "12",
-                    comment = ""
-                )
+               if (type == "Refund"){
+                   deliveryOrderViewModel.updateRefundReplaceOrder(
+                       accessToken = prefs.accessToken,
+                       orderId = orderId,
+                       statusId = "12"
+                   )
+               }else {
+                   deliveryOrderViewModel.updateOrder(
+                       accessToken = prefs.accessToken,
+                       orderId = orderId,
+                       statusId = "12",
+                       comment = ""
+                   )
+               }
             getData()
 
         })

@@ -4,6 +4,7 @@ data class DeliveryOrderListResponse(
     val result: ArrayList<DeliveryOrderData>
 ) {
     data class DeliveryOrderData(
+        val id: String?,
         val order_id: String?,
         val address: String?,
         val status: String?,

@@ -52,6 +52,30 @@ class OrderTrackActivity : BaseActivity() {
         when(addOrderResponse?.order_status){
             "2" -> {
                 iv_dispatched.background = resources.getDrawable(R.drawable.circle_bg)
+                v_dispatched.setBackgroundColor(resources.getColor(R.color.color_text_9F9F9F))
+                iv_shipped.background = resources.getDrawable(R.drawable.circle_white)
+                v_shipped.setBackgroundColor(resources.getColor(R.color.color_text_9F9F9F))
+                out_for_Delivery.background = resources.getDrawable(R.drawable.circle_white)
+                v_out_for_Delivery.setBackgroundColor(resources.getColor(R.color.color_text_9F9F9F))
+                iv_delivered_food.background = resources.getDrawable(R.drawable.circle_white)
+            }
+            "11" -> {
+                iv_dispatched.background = resources.getDrawable(R.drawable.circle_bg)
+                v_dispatched.setBackgroundColor(resources.getColor(R.color.light_green_00973D))
+                iv_shipped.background = resources.getDrawable(R.drawable.circle_bg)
+                v_shipped.setBackgroundColor(resources.getColor(R.color.color_text_9F9F9F))
+                out_for_Delivery.background = resources.getDrawable(R.drawable.circle_white)
+                v_out_for_Delivery.setBackgroundColor(resources.getColor(R.color.color_text_9F9F9F))
+                iv_delivered_food.background = resources.getDrawable(R.drawable.circle_white)
+            }
+            "12" -> {
+//                iv_shipped.background = resources.getDrawable(R.drawable.circle_bg)
+//                v_shipped.setBackgroundColor(resources.getColor(R.color.light_green_00973D))
+//                out_for_Delivery.background = resources.getDrawable(R.drawable.circle_bg)
+//                v_out_for_Delivery.setBackgroundColor(resources.getColor(R.color.light_green_00973D))
+//                iv_delivered_food.background = resources.getDrawable(R.drawable.circle_white)
+
+                iv_dispatched.background = resources.getDrawable(R.drawable.circle_bg)
                 v_dispatched.setBackgroundColor(resources.getColor(R.color.light_green_00973D))
                 iv_shipped.background = resources.getDrawable(R.drawable.circle_bg)
                 v_shipped.setBackgroundColor(resources.getColor(R.color.light_green_00973D))
@@ -60,6 +84,8 @@ class OrderTrackActivity : BaseActivity() {
                 iv_delivered_food.background = resources.getDrawable(R.drawable.circle_white)
             }
             "3" -> {
+                iv_dispatched.background = resources.getDrawable(R.drawable.circle_bg)
+                v_dispatched.setBackgroundColor(resources.getColor(R.color.light_green_00973D))
                 iv_shipped.background = resources.getDrawable(R.drawable.circle_bg)
                 v_shipped.setBackgroundColor(resources.getColor(R.color.light_green_00973D))
                 out_for_Delivery.background = resources.getDrawable(R.drawable.circle_bg)

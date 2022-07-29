@@ -449,6 +449,14 @@ interface ApiInterface {
         @Field("user_id") userId: String,
         @Field("order_type") orderType: String,
         @Field("page_number") pageNumber: String,
+    ): Observable<GetOrdersList>
+
+    @FormUrlEncoded
+    @POST(NetworkConstants.view_order_details)
+    fun getCompleteOrdersDetails(
+        @Header("accessToken") accessToken: String,
+        @Field("order_number") order_number: String,
+        @Field("user_id") user_id: String
     ): Observable<OrderListResponse>
 
     @FormUrlEncoded
@@ -480,6 +488,14 @@ interface ApiInterface {
         @Field("status_id") statusId: String,
         @Field("reason_id") reasonId: String?,
         @Field("comment") comment: String
+    ): Observable<DeliveryOrderStatusUpdateData>
+
+    @FormUrlEncoded
+    @POST(NetworkConstants.update_refund_replacement_order)
+    fun updateRefundReplaceOrderStatus(
+        @Header("accessToken") accessToken: String,
+        @Field("product_return_id") orderId: String,
+        @Field("status_id") statusId: String
     ): Observable<DeliveryOrderStatusUpdateData>
 
     @FormUrlEncoded

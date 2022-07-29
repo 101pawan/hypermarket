@@ -43,8 +43,8 @@ class CouponListAdapter(
         holder.itemView.coupon_code.text = couponList[position].coupon_code
         holder.itemView.couponcode_title.text = couponList[position].coupon_text
         holder.itemView.couponcode_desciption.text = couponList[position].description
-        holder.itemView.months_Duration.text = holder.itemView.months_Duration.context.resources.getString(R.string.duration)+ couponList[position].coupon_valid_to
-        holder.itemView.expiry_coupon.text = holder.itemView.expiry_coupon.context.resources.getString(R.string.expiry) + couponList[position].coupon_valid_to
+        holder.itemView.expiry_coupon.text = couponList[position].start_date +" - "+couponList[position].end_date
+        holder.itemView.expiry_coupon1.text =  couponList[position].end_date
         holder.itemView.get_Code.setOnClickListener {
             clickListener.onClick(couponList[position])
         }

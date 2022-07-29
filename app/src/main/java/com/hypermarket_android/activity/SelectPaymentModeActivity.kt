@@ -282,7 +282,7 @@ class SelectPaymentModeActivity : BaseActivity() {
             PaymentSummaryActivity.totalAmounts="$totalAmount"
             PaymentSummaryActivity.address_id = address_id
             if (couponModel != null) {
-                coupon_id = couponModel!!.id
+                coupon_id = couponModel?.id.toString()
             }
             PaymentSummaryActivity.coupon_id = coupon_id
             PaymentSummaryActivity.charge_delivery = charge_delivery
@@ -363,10 +363,15 @@ class SelectPaymentModeActivity : BaseActivity() {
                 PaymentSummaryActivity.expiryMonth = data.getStringExtra("month")!!
                 isCardDetailsFilled = true
             } else if (requestCode == REQUEST_COUPON_CODE && resultCode == Activity.RESULT_OK) {
-                off_discount.text = couponModel!!.discount + " % off"
+                Log.e("checkcoupontype", couponModel?.coupon_type.toString())
+                if (couponModel?.coupon_type != "Cart") {
+                    off_discount.text = couponModel!!.discount + " % off"
+                }else{
+                    off_discount.text = "${couponModel!!.discount} ${getString(R.string.aed)} off"
+                }
                 code_Desc.text = couponModel!!.description
                 tv_apply_coupon_code_dotted_btn.text = couponModel!!.coupon_code
-                Log.e("getcouponcode",couponModel!!.discount)
+                couponModel?.discount?.let { Log.e("getcouponcode", it) }
 
                 val payableAmount = (((DecimalFormat("#.##").format(totalAmount.toDouble() + charge_delivery.toDouble()).toDouble() + 10.0 + 10.0) * 100.0).roundToInt() / 100.0)
 //                val payableAmount = total_amount.text.toString().replace(resources.getString(R.string.aed),"").trim().toDouble()
@@ -380,8 +385,16 @@ class SelectPaymentModeActivity : BaseActivity() {
                 Log.e("originalAmount",originalAmount.toString())
                 Log.e("totalAmount",totalAmount.toString())
 
+                if (couponModel?.coupon_type != "Cart") {
+                    couponModel?.discount?.let {
+                        offerAmount = totalAmount.toDouble() * it.toDouble() / 100
+                    }
+                }else{
+                    couponModel?.discount?.let {
+                        offerAmount =  it.toDouble()
+                    }
+                }
 
-                 offerAmount =  totalAmount.toDouble() * couponModel!!.discount.toDouble()/100
 
 //                if (payableAmount > payableWalletAmount){
 //                    reducingWalletAmount = 0.0

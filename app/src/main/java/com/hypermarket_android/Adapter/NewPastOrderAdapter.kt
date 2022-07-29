@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hypermarket_android.R
 import com.hypermarket_android.activity.ReviewActivity
+import com.hypermarket_android.dataModel.GetOrdersList
 import com.hypermarket_android.dataModel.OrderListResponse
 import com.hypermarket_android.listener.OnBottomReachedListener
 import com.hypermarket_android.util.convertExpectedDelivery
@@ -21,7 +22,7 @@ import java.lang.Exception
 
 class NewPastOrderAdapter(
     private val context: FragmentActivity?,
-     private var listOfOrder: ArrayList<OrderListResponse.OrderData>,
+     private var listOfOrder: ArrayList<GetOrdersList.OrderData>,
      val listener: OnclickListener
 ) :
 RecyclerView.Adapter<NewPastOrderAdapter.MyViewHolder>() {
@@ -58,26 +59,28 @@ RecyclerView.Adapter<NewPastOrderAdapter.MyViewHolder>() {
              " ${listOfOrder[position].shipping_detail!!.house_number ?: ""}, ${listOfOrder[position].shipping_detail!!.building_name ?: ""}, ${listOfOrder[position].shipping_detail!!.street ?: ""} "
  */
         try {
-            holder.itemView.tv_delivery_date.text =
-                convertExpectedDelivery((listOfOrder[position].expected_delivery?.toLong()))
+//            holder.itemView.tv_delivery_date.text =
+//                convertExpectedDelivery((listOfOrder[position].expected_delivery?.toLong()))
+            holder.itemView.tv_delivery_date.text = "2- 3 days"
         }catch (e:Exception){
 
         }
         holder.itemView.tv_name.text = listOfOrder[position].order_id
-        holder.itemView.products_recyclerview.adapter = ProductsOrderItemAdapter(
-            context,
-            listOfOrder
-        )
-        holder.itemView.tv_order_date.text = convertNewDate(listOfOrder[position].created_at!!.split(".")[0]!!)
+//        holder.itemView.products_recyclerview.adapter = ProductsOrderItemAdapter(
+//            context,
+//            listOfOrder
+//        )
+//        holder.itemView.tv_order_date.text = convertNewDate(listOfOrder[position].order_date!!.split(".")[0]!!)
+        holder.itemView.tv_order_date.text = listOfOrder[position].order_date
         Glide.with(context!!).load(getItem(position)?.product_image).placeholder(R.drawable.no_image)
             .into(holder.itemView.iv_product_photo)
         holder.itemView.give_Rating.setOnClickListener {
             ReviewActivity.productImage =
-                listOfOrder[position].main_image!!
-            ReviewActivity.productName =
-                listOfOrder[position].name!!
+                listOfOrder[position].product_image!!
+//            ReviewActivity.productName =
+//                listOfOrder[position].name!!
             ReviewActivity.product_id =
-                listOfOrder[position].id!!
+                listOfOrder[position].order_id!!
             context!!.startActivity(Intent(context, ReviewActivity::class.java))
         }
 
@@ -95,12 +98,12 @@ RecyclerView.Adapter<NewPastOrderAdapter.MyViewHolder>() {
     }
 
 
-    fun getItem(position: Int): OrderListResponse.OrderData {
+    fun getItem(position: Int): GetOrdersList.OrderData {
         return listOfOrder[position]
     }
 
     interface OnclickListener {
-        fun onClickItem(orderData: OrderListResponse.OrderData,position: Int)
-        fun onClick(orderData: OrderListResponse.OrderData )
+        fun onClickItem(orderData: GetOrdersList.OrderData,position: Int)
+        fun onClick(orderData: GetOrdersList.OrderData )
     }
 }
