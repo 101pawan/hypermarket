@@ -131,7 +131,7 @@ class OrderListViewModel : BaseViewModel() {
     private fun onSuccessOrderList(it: GetOrdersList) {
         orderListResponse.value = it
     }
- 
+
     private fun onSuccessNewPastOrderList(it: GetOrdersList) {
         newPastOrderListResponse.value = it
     }
