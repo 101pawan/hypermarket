@@ -75,6 +75,7 @@ RecyclerView.Adapter<OrdersListAdapter.MyViewHolder>() {
         holder.itemView.price.text = "#" + listOfOrder[position].total_payable_amount +" "+context?.getString(R.string.aed)
 //        holder.itemView.tv_user_name.text = listOfOrder[position].shipping_detail!!.name
 
+
         Log.e("checkaddress",listOfOrder[position].address.toString())
         if (listOfOrder[position].address == null){
             holder.itemView.phone.text = "Not Defined"
