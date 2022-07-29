@@ -80,7 +80,6 @@
         android:src="@drawable/yellowbookmark_fill" />
 
 
-
     <RelativeLayout
         android:id="@+id/expiry_layout"
         android:layout_width="match_parent"
@@ -95,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Duration :"
+            android:text="Duration : 2MONTHS"
             android:textAllCaps="true"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/sp_12" />
@@ -106,40 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Expiry :"
-            android:textAllCaps="true"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/sp_12" />
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/expiry_layout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/expiry_layout"
-        android:layout_marginStart="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_15sdp">
-
-        <TextView
-            android:id="@+id/months_Duration1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Expiry :"
-            android:textAllCaps="true"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/sp_12" />
-
-        <TextView
-            android:id="@+id/expiry_coupon1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Expiry :"
+            android:text="Expiry : 23 jul-2020"
             android:textAllCaps="true"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/sp_12" />

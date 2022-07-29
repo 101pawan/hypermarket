@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.hypermarket_android.Fragment.OrderItemsFragment
-import com.hypermarket_android.Fragment.myorder.OrderDetailFragment
 import com.hypermarket_android.R
 import com.hypermarket_android.dataModel.OrderListResponse
 import kotlinx.android.synthetic.main.activity_my_order.*
@@ -24,11 +23,11 @@ class OrderItemsActivity : AppCompatActivity() {
     fun showMyFragment() {
 //        val order_products: ArrayList<OrderListResponse.OrderProducts> = intent.getSerializableExtra("products") as ArrayList<OrderListResponse.OrderProducts>
 
-        var position = intent.getStringExtra("order_id").toString()
+        var position = intent.getStringExtra("order_position").toString().toIntOrNull()
         var fragment_position = intent.getStringExtra("fragment_position").toString()
-        fragment = OrderDetailFragment(position!!,fragment_position!!)
+        fragment =   OrderItemsFragment(position!!,fragment_position!!)
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, fragment as OrderDetailFragment)
+        transaction.replace(R.id.fragment_container, fragment as OrderItemsFragment)
         transaction.commit()
     }
 

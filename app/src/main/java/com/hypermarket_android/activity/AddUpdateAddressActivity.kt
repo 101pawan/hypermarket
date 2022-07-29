@@ -146,13 +146,11 @@ AddUpdateAddressActivity : BaseActivity(), RadioGroup.OnCheckedChangeListener {
                 et_alt_mobile_number.text.toString(), et_pincode.text.toString(),
                 mSelectedDistrict, mSelectedCity, saveAsType.toString()
             )
-
             if (isAddressValidated) {
                 var cityId = 0
                 if (mSelectedCity != null){
-                    cityId = mSelectedCity?.id!!
+                    cityId = mSelectedDistrict?.id!!
                 }
-                Log.e("testcity",mSelectedCity.toString()+" == "+cityId)
                 if (mDataToUpadate != null) {
                     mAddAddressViewModel.hitUpdateAddressApi(
                         sharedPreference.accessToken,
@@ -354,22 +352,10 @@ AddUpdateAddressActivity : BaseActivity(), RadioGroup.OnCheckedChangeListener {
                 if (pos == 0) {
                     mSelectedCity = null
                 } else {
-                    Log.e("selelctedcity",cityList[pos].toString())
                     mSelectedCity = cityList[pos]
                  //   showToast(mSelectedCity?.name!!)
                 }
             }
-        }
-        if (mDataToUpadate != null) {
-
-            mDataToUpadate?.let {
-
-                val index = cityList.indexOfFirst { city -> city.id == it.city }
-                Log.e("testcity",it.city.toString()+" == "+index)
-                spinner_city.setSelection(index)
-            }
-        }else{
-            spinner_city.setSelection(0)
         }
         /*var citySpinnerPosition = 0;
         for (i in 0..cityList.size) {

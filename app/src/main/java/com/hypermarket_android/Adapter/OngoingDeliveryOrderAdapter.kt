@@ -37,6 +37,8 @@ class OngoingDeliveryOrderAdapter (
 
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+
     }
 
     //Inflate view for recycler
@@ -101,11 +103,7 @@ class OngoingDeliveryOrderAdapter (
                 Log.e("testongoing",data.status_id.toString())
                 if (statusId == 11){
                     //accept delivery
-                    if (data.status == "Replacement" || data.status == "Refund") {
-                        listener.onClick(data)
-                    }else{
-                        listener.onClick(position, data.order_id)
-                    }
+                    listener.onClick(position,data.order_id)
                 }else{
                     UpdateOrderStatusActivity.orderId = data.order_id
                     context?.startActivity(Intent(context, UpdateOrderStatusActivity::class.java))

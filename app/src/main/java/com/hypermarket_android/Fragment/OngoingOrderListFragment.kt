@@ -19,7 +19,6 @@ import com.hypermarket_android.activity.MyOrderActivity
 import com.hypermarket_android.activity.OrderItemsActivity
 import com.hypermarket_android.base.BaseFragment
 import com.hypermarket_android.dataModel.CancelListResponse
-import com.hypermarket_android.dataModel.GetOrdersList
 import com.hypermarket_android.dataModel.OrderListResponse
 import com.hypermarket_android.listener.OnBottomReachedListener
 import com.hypermarket_android.util.ErrorUtil
@@ -38,7 +37,7 @@ class OngoingOrderListFragment : BaseFragment() {
     lateinit var cancelSuccessDialog: Dialog
     lateinit var rv: RecyclerView
 
-    val dataCollection =  ArrayList<GetOrdersList.OrderData>()
+    val dataCollection =  ArrayList<OrderListResponse.OrderData>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -56,7 +55,7 @@ class OngoingOrderListFragment : BaseFragment() {
         return view
     }
     override fun initViews() {
-        Log.e("OngoingOrder","OngoingOrderListFragment")
+        Log.e("OngoingOrderListFragment","OngoingOrderListFragment")
 
         orderListViewModel.getCancellationList(sharedPreferenceUtil.accessToken)
 
@@ -68,7 +67,7 @@ class OngoingOrderListFragment : BaseFragment() {
         ProgressDialogUtils.getInstance().showProgress(this.requireActivity(), false)
         orderListViewModel.getNewOrdersList(
             sharedPreferenceUtil.accessToken,
-            "2,3,11,12",
+            "2,3,11",
             sharedPreferenceUtil.userId,
             "1"
         )
@@ -81,11 +80,11 @@ class OngoingOrderListFragment : BaseFragment() {
             activity!!,
             dataCollection,
             object : OrdersListAdapter.OnclickListener {
-                override fun onClick(orderData: GetOrdersList.OrderData,position:Int) {
-//                    Singleton.orderData = orderData
+                override fun onClick(orderData: OrderListResponse.OrderData,position:Int) {
+                    Singleton.orderData = orderData
 //                        dialogConfirm(orderData.order_id)
                     val intent = Intent(activity, OrderItemsActivity::class.java)
-                    intent.putExtra("order_id",orderData.order_id)
+                    intent.putExtra("order_position",position.toString())
                     intent.putExtra("fragment_position","2")
 //                        intent.putExtra("products",orderData.order_products)
                     activity!!.startActivity(intent)
@@ -98,7 +97,7 @@ class OngoingOrderListFragment : BaseFragment() {
                 ProgressDialogUtils.getInstance().hideProgress()
                 if (it.data.size > 0) {
                     dataCollection.addAll(it.data)
-//                    Singleton.allOrderData = dataCollection
+                    Singleton.allOrderData = dataCollection
 
                     orderAdapter.notifyDataSetChanged()
                 }
@@ -112,7 +111,7 @@ class OngoingOrderListFragment : BaseFragment() {
 //                        productListGridAdapter!!.footerVisibility(false, true)
                         orderListViewModel.getNewOrdersList(
                             sharedPreferenceUtil.accessToken,
-                            "2,3,11,12",
+                            "2,3,11",
                             sharedPreferenceUtil.userId,
                             (it.current_page!!.toInt() + 1).toString(),
                         )

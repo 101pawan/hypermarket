@@ -16,7 +16,6 @@ import com.hypermarket_android.R
 import com.hypermarket_android.Singleton
 import com.hypermarket_android.activity.OrderItemsActivity
 import com.hypermarket_android.base.BaseFragment
-import com.hypermarket_android.dataModel.GetOrdersList
 import com.hypermarket_android.dataModel.OrderInvoiceResponse
 import com.hypermarket_android.dataModel.OrderListResponse
 import com.hypermarket_android.listener.OnBottomReachedListener
@@ -31,7 +30,7 @@ import kotlinx.android.synthetic.main.invoice_dialog_detail.*
 class NewPastOrderFragment : BaseFragment() {
     lateinit var inoviceDialog: Dialog
     private lateinit var orderListViewModel: OrderListViewModel
-    val dataCollection =  ArrayList<GetOrdersList.OrderData>()
+    val dataCollection =  ArrayList<OrderListResponse.OrderData>()
     var pageNo = 1
     lateinit var rv: RecyclerView
     override fun onCreateView(
@@ -64,17 +63,17 @@ class NewPastOrderFragment : BaseFragment() {
             dataCollection,
             object : NewPastOrderAdapter.OnclickListener {
                 override fun onClickItem(
-                    orderData: GetOrdersList.OrderData,
+                    orderData: OrderListResponse.OrderData,
                     position: Int
                 ) {
-//                    Singleton.orderData = orderData
+                    Singleton.orderData = orderData
                     val intent = Intent(activity, OrderItemsActivity::class.java)
-                    intent.putExtra("order_id",orderData.order_id)
+                    intent.putExtra("order_position",position.toString())
                     intent.putExtra("fragment_position","4")
                     activity!!.startActivity(intent)
                 }
 
-                override fun onClick(orderData: GetOrdersList.OrderData) {
+                override fun onClick(orderData: OrderListResponse.OrderData) {
                     ProgressDialogUtils.getInstance()
                         .showProgress(requireActivity(), false)
                     orderListViewModel.getInvoiceDetails(
@@ -87,7 +86,7 @@ class NewPastOrderFragment : BaseFragment() {
             })
         rv.adapter = orderAdapter
         activity?.let { activity ->
-            orderListViewModel.newPastOrderListResponse.observe(activity, Observer {
+            orderListViewModel.pastorderListResponse.observe(activity, Observer {
                 Log.e("observerpastorder","observing")
                 if (pageNo == 1){
                     dataCollection.clear()
@@ -95,7 +94,7 @@ class NewPastOrderFragment : BaseFragment() {
                 ProgressDialogUtils.getInstance().hideProgress()
                 if (it.data.size > 0) {
                     dataCollection.addAll(it.data)
-//                    Singleton.allPastOrderData = dataCollection
+                    Singleton.allPastOrderData = dataCollection
                     orderAdapter.notifyDataSetChanged()
                 }
                 orderAdapter.setOnBottomReachedListener(object :

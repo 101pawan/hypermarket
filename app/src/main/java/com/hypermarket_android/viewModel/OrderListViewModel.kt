@@ -12,10 +12,7 @@ import io.reactivex.schedulers.Schedulers
 class OrderListViewModel : BaseViewModel() {
 
     private lateinit var mDisposable: Disposable
-//    var orderListResponse = MutableLiveData<OrderListResponse>()
-    var orderListResponse = MutableLiveData<GetOrdersList>()
-    var newPastOrderListResponse = MutableLiveData<GetOrdersList>()
-    var newCancelledOrderListResponse = MutableLiveData<GetOrdersList>()
+    var orderListResponse = MutableLiveData<OrderListResponse>()
     var pastorderListResponse = MutableLiveData<OrderListResponse>()
     var cancelledorderListResponse = MutableLiveData<OrderListResponse>()
     var cancelListResponse = MutableLiveData<CancelListResponse>()
@@ -27,19 +24,19 @@ class OrderListViewModel : BaseViewModel() {
 
     //    getOrders ongoing
     fun getOrders(accessToken: String, type: String, user_id: String) {
-//        apiInterface.getOrders(
-//            accessToken = accessToken,
-//            orderType = type,
-//            userId = user_id
-//
-//        ).subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe({
-//                onSuccessOrderList(it)
-//            },
-//                {
-//                    onErrorOrderList(it)
-//                })
+        apiInterface.getOrders(
+            accessToken = accessToken,
+            orderType = type,
+            userId = user_id
+
+        ).subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                onSuccessOrderList(it)
+            },
+                {
+                    onErrorOrderList(it)
+                })
     }
 
     fun getNewOrdersList(accessToken: String, type: String, user_id: String, page_no: String) {
@@ -62,7 +59,7 @@ class OrderListViewModel : BaseViewModel() {
 
     //    getOrders past
     fun getNewOrdersPast(accessToken: String, type: String, user_id: String, page_no: String) {
-        apiInterface.getCompleteOrdersList(
+        apiInterface.getNewOrdersList(
             accessToken = accessToken,
             orderType = type,
             userId = user_id,
@@ -71,7 +68,7 @@ class OrderListViewModel : BaseViewModel() {
         ).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                onSuccessNewPastOrderList(it)
+                onSuccessOrderListPast(it)
             },
                 {
                     onErrorOrderList(it)
@@ -97,7 +94,7 @@ class OrderListViewModel : BaseViewModel() {
     //    getOrders cancelled
 
     fun getNewOrdersCancelled(accessToken: String, type: String, user_id: String, page_no: String) {
-        apiInterface.getCompleteOrdersList(
+        apiInterface.getNewOrdersList(
             accessToken = accessToken,
             orderType = type,
             userId = user_id,
@@ -106,7 +103,7 @@ class OrderListViewModel : BaseViewModel() {
         ).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                onSuccessCompleteOrderListCancelled(it)
+                onSuccessOrderListCancelled(it)
             },
                 {
                     onErrorOrderList(it)
@@ -128,21 +125,9 @@ class OrderListViewModel : BaseViewModel() {
                 })
     }
 
-    private fun onSuccessOrderList(it: GetOrdersList) {
+    private fun onSuccessOrderList(it: OrderListResponse) {
         orderListResponse.value = it
     }
-
-    private fun onSuccessNewPastOrderList(it: GetOrdersList) {
-        newPastOrderListResponse.value = it
-    }
-
-
-    private fun onSuccessCompleteOrderListCancelled(it: GetOrdersList) {
-        newCancelledOrderListResponse.value = it
-    }
-//    private fun onSuccessOrderList(it: OrderListResponse) {
-//        orderListResponse.value = it
-//    }
 
     private fun onSuccessOrderListPast(it: OrderListResponse) {
         pastorderListResponse.value = it
@@ -151,7 +136,6 @@ class OrderListViewModel : BaseViewModel() {
     private fun onSuccessOrderListCancelled(it: OrderListResponse) {
         cancelledorderListResponse.value = it
     }
-
 
     private fun onErrorOrderList(it: Throwable) {
         Log.e("Fsfds", it.message!!)

@@ -225,7 +225,8 @@
                     android:textColor="@color/light_green_00973D"
                     android:textSize="9sp"
                     android:textStyle="normal"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/v_dispatched"
+                    app:layout_constraintStart_toStartOf="@id/iv_dispatched"
                     app:layout_constraintTop_toBottomOf="@+id/iv_dispatched" />
 
 

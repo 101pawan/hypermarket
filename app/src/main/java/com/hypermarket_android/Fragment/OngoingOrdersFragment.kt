@@ -57,18 +57,18 @@ class OngoingOrdersFragment : BaseFragment() {
         )
     }
     override fun initControl() {
-//        orderListViewModel.orderListResponse.observe(this.requireActivity(), Observer {
-//            rv_ongoing_orders.layoutManager = LinearLayoutManager(this.requireActivity())
-//            rv_ongoing_orders.adapter = OngoingOrderAdapter(
-//                activity!!,
-//                it.data,
-//                object : OngoingOrderAdapter.OnclickListener {
-//                    override fun onClick(orderData: OrderListResponse.OrderData) {
-//                        dialogConfirm(orderData.order_id)
-//                    }
-//
-//                })
-//        })
+        orderListViewModel.orderListResponse.observe(this.requireActivity(), Observer {
+            rv_ongoing_orders.layoutManager = LinearLayoutManager(this.requireActivity())
+            rv_ongoing_orders.adapter = OngoingOrderAdapter(
+                activity!!,
+                it.data,
+                object : OngoingOrderAdapter.OnclickListener {
+                    override fun onClick(orderData: OrderListResponse.OrderData) {
+                        dialogConfirm(orderData.order_id)
+                    }
+
+                })
+        })
         orderListViewModel.cancelOrderResponse.observe(this.requireActivity(), Observer {
             ProgressDialogUtils.getInstance().hideProgress()
             showToast(this.requireActivity(), it.message)

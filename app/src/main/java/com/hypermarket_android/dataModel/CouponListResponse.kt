@@ -5,21 +5,20 @@ data class CouponListResponse(
     val response: ArrayList<CouponModel>
 ) {
     data class CouponModel(
-        val id: String? = null,
-        val coupon_code: String? = null,
-        val store_id: String? = null,
-        val category_id: String? = null,
-        val product_id: String? = null,
-        val start_date: String? = null,
-        val end_date: String? = null,
-        val status: String? = null,
-        val coupon_type: String? = null,
-        val discount: String? = null,
-        val description: String? = null,
-        val created_at: String? = null,
-        val coupon_valid_to: String? = null,
-        val coupon_text: String? = null,
-        val updated_at: String? = null
+        val id: String,
+        val coupon_code: String,
+        val store_id: String,
+        val category_id: String,
+        val product_id: String,
+        val start_date: String,
+        val end_date: String,
+        val status: Int,
+        val discount: String,
+        val description: String,
+        val created_at: String?,
+        val coupon_valid_to: String?,
+        val coupon_text: String?,
+        val updated_at: String?
     )
 
 

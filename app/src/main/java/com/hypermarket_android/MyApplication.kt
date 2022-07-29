@@ -25,9 +25,9 @@ class MyApplication : Application() {
                 Log.i(getString(R.string.DEBUG_TAG), " Task Filed")
                 return@OnCompleteListener
             }
-//            Log.d(
-//                getString(R.string.DEBUG_TAG), " The completed result: " + task?.result?.token
-//            )
+            Log.d(
+                getString(R.string.DEBUG_TAG), " The completed result: " + task?.result?.token
+            )
             //Making an API call - Thread, Volley, okHttp, Retrofit
         })
     }
